@@ -1,0 +1,26 @@
+/* Toast.module.css */
+
+.toast {
+    margin-right: 20px;
+    position: fixed;
+    top: 24px;
+    right: -1px; /* Initially off-screen */
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: right 0.5s ease-in-out; /* Smooth transition for sliding effect */
+    max-width: 300px; /* Ensure the toast does not stretch too wide */
+    z-index: 9999;
+  }
+  
+  .toast.show {
+    right: 20px; /* Move the toast to the right when shown */
+  }
+  
+  .toast p {
+    margin: 0;
+  }
+  
