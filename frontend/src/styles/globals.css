@@ -67,11 +67,14 @@ main {
   font-weight: 500;
   padding: 0.5rem 1rem;
 }
-.menu-bar a:hover,
-.menu-bar a.active {
+.menu-bar a:hover{
   background-color: #000;
   color: #fff;
   border-radius: 5px;
+}
+.menu-bar a.active {
+  color: #5a4e4e;
+  font-weight: 650;
 }
 .shopping-cart {
   position: relative;
