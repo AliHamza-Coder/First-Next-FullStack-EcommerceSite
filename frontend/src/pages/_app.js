@@ -3,6 +3,7 @@ import Header from "@/Components/Header";
 import Toast from "@/Components/Toast";
 import "@/styles/globals.css";
 import { useState } from "react";
+import ScrollToTop from "@/Components/ScrollToTop";
 
 export default function App({ Component, pageProps }) {
   const [cart, setCart] = useState([]);
@@ -55,6 +56,7 @@ export default function App({ Component, pageProps }) {
         clearCart={clearCart}
         {...pageProps}
       />
+      <ScrollToTop/>
       <Footer />
     </>
   );

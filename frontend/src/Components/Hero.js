@@ -9,7 +9,7 @@ const Hero = () => {
         <p>
           Welcome to Furniture Store, your one-stop online shop for high-quality furniture and homeware at affordable prices.
         </p>
-        <Link href="/products" legacyBehavior>
+        <Link href="/furnitures" legacyBehavior>
           <a>
             <button className="btn">View Furnitures</button>
           </a>

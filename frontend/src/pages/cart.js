@@ -3,10 +3,16 @@ import { useState, useEffect } from "react";
 const CartPage = ({ cart, removeFromCart }) => {
   const [cartItems, setCartItems] = useState(cart); // Local state for cart items
 
-  // Use useEffect to watch for changes in the cart prop and update local state
+  // Sync local state when cart prop changes
   useEffect(() => {
     setCartItems(cart);
-  }, [cart]); // When cart state changes, update local state
+  }, [cart]);
+
+  const handleRemove = (item) => {
+    const updatedCart = cartItems.filter(cartItem => cartItem !== item);
+    setCartItems(updatedCart); // Instantly update local state
+    removeFromCart(item); // Call parent function to update global state
+  };
 
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
 
@@ -27,10 +33,7 @@ const CartPage = ({ cart, removeFromCart }) => {
                 </div>
                 <button
                   className="remove-btn"
-                  onClick={() => {
-                    removeFromCart(item); // Call the function passed via props
-                    setCartItems(cartItems.filter(cartItem => cartItem !== item)); // Remove item from local state
-                  }}
+                  onClick={() => handleRemove(item)}
                 >
                   Remove
                 </button>
